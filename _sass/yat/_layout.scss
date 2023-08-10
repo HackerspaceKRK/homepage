@@ -792,6 +792,22 @@ html {
   vertical-align: baseline;
 }
 
+div.sponsors {
+  border-left: solid 1px #00000018;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: 0em;
+  padding-top: 0em;
+}
+
+.sponsors h2:not(:first-child) {
+  margin-top: 2em;
+}
+
+.sponsors h2 {
+  text-align: center;
+}
+
 img.sponsors {
   max-height: 5em;
   margin: 0 auto;
