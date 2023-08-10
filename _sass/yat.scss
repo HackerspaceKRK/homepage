@@ -28,7 +28,7 @@ $header-background-color: $theme-color !default;
 
 $footer-height: $header-height * 1.05 !default;
 $footer-text-color: lighten(invert($theme-color), 25%) !default;
-$footer-background-color: $brand-color !default;
+$footer-background-color: lighten($brand-color, 40%) !default;
 
 $banner-height: 32em !default;
 $banner-text-color: lighten($white-color, 0%) !default;
