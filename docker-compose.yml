@@ -1,11 +1,11 @@
-version: '3'
+version: "3"
 
 services:
   jekyll:
-    image: jekyll/builder
-    command: jekyll serve
+    build: .
+    command: jekyll serve --trace --host 0.0.0.0
     volumes:
-      - .:/srv/jekyll:Z
+      - .:/app
     ports:
       - "4000:4000"
     restart: "no"
