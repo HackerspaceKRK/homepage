@@ -24,9 +24,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
+title: Hackerspace Kraków
 email: your-email@domain.com
-author: GitHub User
+author: Hackerspace Kraków
 
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
@@ -40,7 +40,7 @@ author: GitHub User
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
+copyright: " 2012-{currentYear} {author} All right reserved"
 
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -152,12 +152,17 @@ yat:
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-# header_pages:
-#   - index.html
-#   - archives.html
-#   - categories.html
-#   - tags.html
-#   - about.md
+header_pages:
+  - title: wiki
+    url: https://wiki.hackerspace-krk.pl/
+  - title: kalendarz
+    url: https://www.meetup.com/hackerspacekrakow/
+  - title: darowizny
+    url: /darowizny
+  - title: kontakt
+    url: /kontakt
+  - title: status siedziby
+    url: https://at.hskrk.pl/
 
 # Page default value
 # defaults:

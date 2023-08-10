@@ -11,13 +11,12 @@ html {
   &[data-scroll-status='top'] {
     header.site-header-transparent {
       height: 0;
-      margin-top: 12px;
       background-color: transparent;
       transition: 0.1s height,background-color,box-shadow;
 
       &.site-header {
         .site-brand-inner, .page-link {
-          color: #fff;
+          color: #333;
           transition: 0.1s color;
         }
 
@@ -71,13 +70,15 @@ html {
   z-index: 1000;
 
   & > .wrapper {
-    margin: 0 60px;
-    padding: 0;
+    margin: 0;
+    padding: 0 60px;
     max-width: 100%;
     transition: 0.2s margin;
+    background: rgba(238,238,238,0.86);
 
     @include media-query(1024px) {
-      margin: 0 20px;
+      margin: 0;
+      padding: 0 20px;
       max-width: unset;
     }
   }
@@ -107,7 +108,7 @@ html {
 
     .site-favicon {
       display: inline-block;
-      height: $header-height / 1.5;
+      height: $header-height / 1.2;
       margin-right: 5px;
     }
   }
@@ -201,8 +202,9 @@ html {
   }
 
   a {
-    $a-color: $brand-color;
+    $a-color: map-get($theme-colors, "spacegrey");
     color: $a-color;
+    font-weight: bold;
 
     &:hover {
       color: lighten($a-color, 10%);
@@ -249,8 +251,7 @@ html {
 .page-content {
   @extend %flex-1; /* <-- Keep footer on the bottom */
   -ms-flex: none; /* <-- Fix IE footer issue */
-  padding: $spacing-unit * 2 0;
-  padding-top: 72px;
+  padding: 2em 0 ;
 }
 
 .page-heading {
@@ -587,6 +588,8 @@ html {
 
     & > *:first-child {
       @include center-image;
+      background-position: top center;
+      background-size: cover;
       transition: 0.1s all ease-in-out;
     }
 
@@ -782,4 +785,9 @@ html {
   margin: 0 10px;
   background-color: #e3e3e3e3;
   vertical-align: baseline;
+}
+
+img.sponsors {
+  max-height: 5em;
+  margin: 0 auto;
 }
