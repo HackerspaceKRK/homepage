@@ -3,7 +3,7 @@ version: '3'
 services:
   jekyll:
     image: jekyll/builder
-    command: jekyll build --future --trace
+    command: jekyll serve
     volumes:
       - .:/srv/jekyll:Z
     ports:

@@ -34,7 +34,7 @@
 
           <div class="trigger">
             {%- for path in page_paths -%}
-              <a class="page-link" href="{{ path.url }}">{{ path.title | upcase | escape }}</a>
+              <a class="page-link" href="{{ path.url | relative_url }}">{{ path.title | upcase | escape }}</a>
             {%- endfor -%}
 
           </div>
