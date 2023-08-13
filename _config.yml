@@ -132,7 +132,7 @@ yat:
 # this and add the path to the pages in order as they should show up
 header_pages:
   - title: wiki
-    url: https://wiki.hackerspace-krk.pl/
+    url: https://phabricator.hskrk.pl/w/
   - title: kalendarz
     url: https://www.meetup.com/hackerspacekrakow/
   - title: darowizny
