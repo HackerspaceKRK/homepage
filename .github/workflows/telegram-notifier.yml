@@ -10,7 +10,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  notify_on_telegram:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -27,4 +27,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            A new PR is raised [View all PR's](https://github.com/HackerspaceKRK/homepage/pulls)
+            A new PR push [to homepage is raised](https://github.com/HackerspaceKRK/homepage/pulls)
