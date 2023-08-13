@@ -29,18 +29,18 @@ banner: "/assets/images/banners/home.jpeg"
 <h2>
   Jak nas znaleźć?
 </h2>
-<div id="mapmain">
-  <script>
-    var mymap = L.map('mapmain').setView([50.06603, 19.94336], 15);
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid3ByenliIiwiYSI6IjRnckNtYncifQ.3q8gdJY61IsaClOZDa200w', {
-      maxZoom: 15,
-      attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-        'Imagery © <a href="https://mapbox.com">Mapbox</a>',
-      id: 'mapbox/streets-v11'
-    }).addTo(mymap);
-
-    L.marker([50.06603, 19.94336]).addTo(mymap)
-      .bindPopup('<a href="https://phabricator.hskrk.pl/w/about/siedziba"><strong>Hackerspace Kraków</strong></a>');
-  </script>
-</div>
+<div id="map"></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1Ijoid3ByenliIiwiYSI6IjRnckNtYncifQ.3q8gdJY61IsaClOZDa200w';
+  const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
+    center: [50.06603, 19.94336], // starting position [lng, lat]
+    zoom: 15 // starting zoom
+  });
+  const hs = new mapboxgl.Marker()
+    .setLngLat([50.06603, 19.94336])
+    .bindPopup('<a href="https://phabricator.hskrk.pl/w/about/siedziba"><strong>Hackerspace Kraków</strong></a>')
+    .addTo(map);
+</script>
