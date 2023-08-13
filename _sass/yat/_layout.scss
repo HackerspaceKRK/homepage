@@ -596,7 +596,7 @@ html {
 
     & > *:first-child {
       @include center-image;
-      background-position: top center;
+      background-position: center;
       background-size: cover;
       transition: 0.1s all ease-in-out;
     }
