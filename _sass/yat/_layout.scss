@@ -706,6 +706,8 @@ html {
 
   .main {
     @extend %flex-1;
+    position: sticky;
+    top: 109px;
   }
 
   .sidebar {
@@ -811,4 +813,16 @@ div.sponsors {
 img.sponsors {
   max-height: 5em;
   margin: 0 auto;
+}
+
+
+.camera-col {
+  flex-grow: 0;
+  flex-shrink: 0.9;
+  flex-basis: auto;
+  padding: 0 1em;
+}
+
+#map {
+  height: 500px;
 }
