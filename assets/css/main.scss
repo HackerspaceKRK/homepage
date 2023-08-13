@@ -33,7 +33,7 @@ $brand-color: map-get($brand-colors, "orangered");
   $brand-color: "{{ site.brand_color | default: '#ff5100' }}";
 }
 
-$content-width: {{ site.content_width | default: '920px' }};
+$content-width: {{ site.content_width | default: '1080px' }};
 
 // Click to top theme
 $click-to-top-light-background-color: "{{ site.click_to_top.light.background_color | default: white }}";
