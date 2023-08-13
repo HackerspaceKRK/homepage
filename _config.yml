@@ -173,7 +173,7 @@ header_pages:
 
 # Photo previewer settings (PhotoSwipe 5)
 # the options please refer to: https://photoswipe.com/options/
-# photo_previewer:
+photo_previewer:
 #  gallery: "section.main"
 #  children: "a.photo-swipe"
 #  bgOpacity: 0.8
