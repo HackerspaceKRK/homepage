@@ -140,7 +140,7 @@ header_pages:
   - title: kontakt
     url: /kontakt
   - title: status siedziby
-    url: https://at.hskrk.pl/
+    url: /at
 
 # Page default value
 # defaults:

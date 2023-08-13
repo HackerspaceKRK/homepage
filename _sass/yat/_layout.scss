@@ -139,6 +139,7 @@ html {
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 24px;
+
       &:hover {
         text-decoration: underline;
       }
@@ -569,6 +570,7 @@ html {
     &:not(:first-child) {
       margin-top: 18px;
     }
+
     margin-bottom: 8px;
   }
 
@@ -815,14 +817,32 @@ img.sponsors {
   margin: 0 auto;
 }
 
+.camera-container {
+  display: flex;
+}
+
+@include media-query($on-laptop) {
+  .camera-container {
+    display: block;
+  }
+}
 
 .camera-col {
   flex-grow: 0;
   flex-shrink: 0.9;
   flex-basis: auto;
   padding: 0 1em;
+
+  div {
+    margin-bottom: 1.5em;
+  }
 }
 
 #map {
   height: 500px;
+}
+
+.charts {
+  padding: 2em 0;
+  text-align: center;
 }

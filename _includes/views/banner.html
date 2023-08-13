@@ -63,6 +63,7 @@
     }
   </style>
   {%- endif -%}
+  {%- if banner_image != "" -%}
   <section class="page-banner">
     <div class="page-banner-img">
         <div style="background-image: url({{ banner_image }})"></div>
@@ -71,5 +72,10 @@
     <div class="wrapper">
     </div>
   </section>
+  {%- else -%}
+  <div style="height: 90px">
+
+  </div>
+  {%- endif -%}
 {%- endif -%}
 
