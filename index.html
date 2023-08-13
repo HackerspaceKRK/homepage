@@ -36,10 +36,16 @@ banner: "/assets/images/banners/home.jpeg"
     container: 'map', // container ID
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/mapbox/streets-v12', // style URL
-    center: [50.06603, 19.94336], // starting position [lng, lat]
+    center: [19.94336, 50.06603], // starting position [lng, lat]
     zoom: 15 // starting zoom
   });
   const hs = new mapboxgl.Marker()
-    .setLngLat([50.06603, 19.94336])
+    .setLngLat([19.94336, 50.06603])
+    .setPopup(
+      new mapboxgl.Popup({offset: 25}) // add popups
+        .setHTML(
+          `<a href="https://phabricator.hskrk.pl/w/about/siedziba"><strong>Hackerspace Kraków</strong></a>`
+        )
+    )
     .addTo(map);
 </script>
