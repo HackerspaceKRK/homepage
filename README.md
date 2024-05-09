@@ -18,3 +18,4 @@ Alternatively you can just `docker-compose up` and visit `http://localhost:1313`
 - `layouts/` - THe layout & structure of the website
     - `layouts/partials/sponsors.html` - Sponsors
 - `assets/` - CSS, JS, images, etc.
+- `hugo.yaml` - Site configuration, main menu lives here

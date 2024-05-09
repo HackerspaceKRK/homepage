@@ -19,3 +19,4 @@ menus:
   - name: Status siedziby
     pageRef: /at
     weight: 50
+enableRobotsTXT: true
