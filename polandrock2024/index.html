@@ -10,7 +10,7 @@ header_pages:
 
 <h3>Hackerspace na 2024 Pol’and’Rock Festival</h3>
 
-<h4>Program stoiska</h4>
+
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/web-component@6.1.11/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.11/index.global.min.js"></script>
@@ -18,6 +18,8 @@ header_pages:
 
 <div>KALENDARZ JESZCZE DO ZMIANY - @alufers 09.05.2024</div>
 
+
+<h4 class="centered-title">Program warsztatów</h4>
 <div id="calendarSlot"></div>
 
 <script>
@@ -149,11 +151,7 @@ header_pages:
   };
   let calendarObj = {
     locale: "pl",
-    headerToolbar: {
-      start: "",
-      center: "title",
-      end: "",
-    },
+    headerToolbar: false,
     initialView: "timeGridFestival",
     events,
 
@@ -166,6 +164,7 @@ header_pages:
         slotMaxTime: "20:00:00",
         buttonText: "Cały festiwal",
         eventMinHeight: 24,
+        dayHeaderFormat: { weekday: "long", day: "numeric", month: "numeric" },
       },
     },
     validRange: festivalRange,
@@ -225,8 +224,8 @@ header_pages:
       opts = {
         ...calendarObj,
         headerToolbar: {
-          ...calendarObj.headerToolbar,
           right: "prev,next",
+          left: "today",
         },
         views: {
           ...calendarObj.views,
@@ -264,6 +263,9 @@ header_pages:
         filter: contrast(0.8) grayscale(0.1);
         position: relative;
       }
+      .fc-event-past .fc-event-time {
+        text-decoration: line-through;
+      }
 
       .fc-event:not(.fc-event-past):not(.fc-event-future) {
         font-weight: bold;
@@ -293,7 +295,11 @@ header_pages:
   window.addEventListener("resize", setMobileOrDesktopCalendar);
 </script>
 <style>
-  .fc-timegrid-now-indicator-line {
-    border-width: 3px 0px 0px;
+  .centered-title {
+    text-align: center;
+    margin-block-end: 0.25em;
+    font-size: 1.5em;
   }
 </style>
+
+<h4 class="centered-title">Program warsztatów</h4>
