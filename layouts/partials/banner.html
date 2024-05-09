@@ -1,0 +1,33 @@
+{{ if .Params.banner }}
+
+<section class="page-banner">
+    {{ $imagePath := or .Params.banner  "images/home.jpg" }}
+    {}
+    {{ $image := resources.Get $imagePath }}
+    {{ $image_webp :=  $image.Process "webp photo" }}
+
+    <!-- Overshoot the resizes, the image might be cropped -->
+    {{ $image_webp600 :=  $image.Process "webp photo resize 900x" }}
+    {{ $image_jpeg600 :=  $image.Process "jpeg photo resize 900x" }}
+
+    {{ $image_webp1200 :=  $image.Process "webp photo resize 1400x" }}
+    {{ $image_jpeg1200 :=  $image.Process "jpeg photo resize 1400x" }}
+ 
+    <picture>
+        <source srcset="{{ $image_webp.RelPermalink }}" type="image/webp" media="(min-width: 1201px)">
+        <source srcset="{{ $image.RelPermalink }}" media="(min-width: 1201px)">
+
+        <source srcset="{{ $image_webp1200.RelPermalink }}" type="image/webp" media="(min-width: 601px)">
+        <source srcset="{{ $image_jpeg1200.RelPermalink }}" media="(min-width: 601px)">
+        
+
+        <source srcset="{{ $image_webp600.RelPermalink }}" type="image/webp">
+
+        <img src="{{ $image_jpeg600.RelPermalink }}" alt="Widok na siedzibę" class="page-banner-img"/>
+    </picture>
+</section>
+
+{{else}}
+<div class="banner-replacement"></div>
+
+{{ end }}

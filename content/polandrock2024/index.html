@@ -1,0 +1,305 @@
+---
+layout: default
+title: Hackerspace na 2024 Pol’and’Rock Festival -- informacje
+sidebar: ""
+banner: ""
+header_pages:
+  - title: wiki
+    url: https://phabricator.hskrk.pl/w/
+---
+
+<h3>Hackerspace na 2024 Pol’and’Rock Festival</h3>
+
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/web-component@6.1.11/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.11/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.11/locales/pl.global.js"></script>
+
+<div>KALENDARZ JESZCZE DO ZMIANY - @alufers 09.05.2024</div>
+
+
+<h4 class="centered-title">Program warsztatów</h4>
+<div id="calendarSlot"></div>
+
+<script>
+  let events = [
+    {
+      id: "ev0",
+      title: "Hackerspace - o co z tym wszystkim chodzi? ",
+      start: "2024-07-31 10:00",
+      end: "2024-07-31 12:00",
+    },
+    {
+      id: "ev1",
+      title: "Niekoniecznie bezpieczny Internet",
+      start: "2024-07-31 12:00",
+      end: "2024-07-31 13:00",
+    },
+    {
+      id: "ev2",
+      title: "Efekty gitarowe",
+      start: "2024-07-31 13:30",
+      end: "2024-07-31 15:30",
+    },
+    {
+      id: "ev3",
+      title: "Warsztaty wiązania węzłów",
+      start: "2024-07-31 16:00",
+      end: "2024-07-31 17:30",
+    },
+    {
+      id: "ev4",
+      title: "Hackerspace - o co z tym wszystkim chodzi? ",
+      start: "2024-07-31 18:00",
+      end: "2024-07-31 20:00",
+    },
+    {
+      id: "ev5",
+      title: "Hackerspace - o co z tym wszystkim chodzi? ",
+      start: "2024-08-01 10:00",
+      end: "2024-08-01 12:00",
+    },
+    {
+      id: "ev6",
+      title: "Jak hackerzy uczą się języków na przykładzie języka chińskiego",
+      start: "2024-08-01 12:00",
+      end: "2024-08-01 13:30",
+    },
+    {
+      id: "ev7",
+      title: "Warsztaty origami",
+      start: "2024-08-01 14:00",
+      end: "2024-08-01 15:00",
+    },
+    {
+      id: "ev8",
+      title: "otwarcie festiwalu",
+      start: "2024-08-01 15:00",
+      end: "2024-08-01 15:20",
+    },
+    {
+      id: "ev9",
+      title: "Warsztaty z lutowania",
+      start: "2024-08-01 16:30",
+      end: "2024-08-01 18:00",
+    },
+    {
+      id: "ev10",
+      title: "Hackerspace - o co z tym wszystkim chodzi? ",
+      start: "2024-08-01 18:00",
+      end: "2024-08-01 20:00",
+    },
+    {
+      id: "ev11",
+      title: "Hackerspace - o co z tym wszystkim chodzi? ",
+      start: "2024-08-02 10:00",
+      end: "2024-08-02 12:00",
+    },
+    {
+      id: "ev12",
+      title: "Niekoniecznie bezpieczny Internet",
+      start: "2024-08-02 12:00",
+      end: "2024-08-02 13:00",
+    },
+    {
+      id: "ev13",
+      title: "Efekty gitarowe",
+      start: "2024-08-02 13:30",
+      end: "2024-08-02 15:30",
+    },
+    {
+      id: "ev14",
+      title: "Warsztaty wiązania węzłów",
+      start: "2024-08-02 16:00",
+      end: "2024-08-02 17:30",
+    },
+    {
+      id: "ev15",
+      title: "Hackerspace - o co z tym wszystkim chodzi? ",
+      start: "2024-08-02 18:00",
+      end: "2024-08-02 20:00",
+    },
+    {
+      id: "ev16",
+      title: "Hackerspace - o co z tym wszystkim chodzi? ",
+      start: "2024-08-03 10:00",
+      end: "2024-08-03 12:00",
+    },
+    {
+      id: "ev17",
+      title: "Jak hackerzy uczą się języków na przykładzie języka chińskiego",
+      start: "2024-08-03 12:00",
+      end: "2024-08-03 13:30",
+    },
+    {
+      id: "ev18",
+      title: "Warsztaty z lutowania",
+      start: "2024-08-03 16:00",
+      end: "2024-08-03 17:30",
+    },
+    {
+      id: "ev19",
+      title: "Hackerspace - o co z tym wszystkim chodzi? ",
+      start: "2024-08-03 18:00",
+      end: "2024-08-03 20:00",
+    },
+  ];
+  let festivalRange = {
+    start: "2024-07-31",
+    end: "2024-08-04",
+  };
+  let calendarObj = {
+    locale: "pl",
+    headerToolbar: false,
+    initialView: "timeGridFestival",
+    events,
+
+    views: {
+      timeGridFestival: {
+        type: "timeGrid",
+        allDaySlot: false,
+        visibleRange: festivalRange,
+        slotMinTime: "10:00:00",
+        slotMaxTime: "20:00:00",
+        buttonText: "Cały festiwal",
+        eventMinHeight: 24,
+        dayHeaderFormat: { weekday: "long", day: "numeric", month: "numeric" },
+      },
+    },
+    validRange: festivalRange,
+    nowIndicator: true,
+    contentHeight: "auto",
+    now: "2024-08-01T14:15:00", // REMOVE AFTER TESTING
+  };
+
+  function escapeHtml(unsafe) {
+    return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  }
+  function escapeHtmlAttr(unsafe) {
+    return escapeHtml(unsafe).replace(/"/g, "&quot;");
+  }
+
+  const eventBackgroundColors = [
+    "#B03060",
+    "#016936",
+    "#B413EC",
+    "#0E6EB8",
+    "#008080",
+    "#32CD32",
+  ];
+  const eventColorMap = {
+    "Hackerspace - o co z tym wszystkim chodzi? ": "#FE9A76",
+  };
+
+  // color events by title
+  for (let event of events) {
+    if (!eventColorMap[event.title]) {
+      eventColorMap[event.title] = eventBackgroundColors[0];
+      eventBackgroundColors.push(eventBackgroundColors.shift()); // rotate colors
+    }
+    event.backgroundColor = eventColorMap[event.title];
+    event.borderColor = eventColorMap[event.title];
+
+    // not really a hackerspace event
+    if ("otwarcie festiwalu" === event.title) {
+      event.backgroundColor = "transparent";
+      event.textColor = "#333";
+    }
+    if ("Hackerspace - o co z tym wszystkim chodzi? " === event.title) {
+      event.backgroundColor = "white";
+      event.textColor = "#333";
+    }
+  }
+
+  let wasMobile = null;
+
+  function setMobileOrDesktopCalendar() {
+    const isMobile = document.documentElement.clientWidth < 768;
+    if (wasMobile === isMobile) {
+      return;
+    }
+    let opts = calendarObj;
+    if (isMobile) {
+      opts = {
+        ...calendarObj,
+        headerToolbar: {
+          right: "prev,next",
+          left: "today",
+        },
+        views: {
+          ...calendarObj.views,
+          timeGridFestival: {
+            ...calendarObj.views.timeGridFestival,
+            visibleRange: undefined,
+            duration: { days: 1 },
+          },
+        },
+      };
+    }
+    // remove all children
+    let calendarElem = document.createElement("full-calendar");
+    calendarElem.setAttribute("shadow", "");
+    // calendarElem.setAttribute("options", JSON.stringify(opts));
+    document.querySelector("#calendarSlot").innerHTML = "";
+    document.querySelector("#calendarSlot").appendChild(calendarElem);
+    calendarElem.options = opts;
+
+    const styleSheet = new CSSStyleSheet();
+    styleSheet.replaceSync(`
+      .fc-timegrid-now-indicator-line {
+        border-width: 3px 0px 0px !important;
+        transform: translateY(-1.5px) !important;
+        opacity: 0.8;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+      }
+      .fc-event {
+        margin-top: 1px !important;
+        margin-bottom: 1px !important;
+        border-width: 2px !important;
+      }
+      .fc-event-past {
+        opacity: 0.5;
+        filter: contrast(0.8) grayscale(0.1);
+        position: relative;
+      }
+      .fc-event-past .fc-event-time {
+        text-decoration: line-through;
+      }
+
+      .fc-event:not(.fc-event-past):not(.fc-event-future) {
+        font-weight: bold;
+      }
+
+      .fc .fc-timegrid-col.fc-day-today {
+        background-color:  rgba(14, 110, 184, 0.1) !important;
+       
+      }
+
+      .fc-col-header-cell {
+        font-weight: normal !important;
+      }
+      .fc-col-header-cell.fc-day-today {
+        background-color: rgb(14, 110, 184) !important;
+        color: #eee;
+        font-weight: bold !important;
+      }
+
+     
+    `);
+    calendarElem.shadowRoot.adoptedStyleSheets.push(styleSheet);
+  }
+
+  setMobileOrDesktopCalendar();
+
+  window.addEventListener("resize", setMobileOrDesktopCalendar);
+</script>
+<style>
+  .centered-title {
+    text-align: center;
+    margin-block-end: 0.25em;
+    font-size: 1.5em;
+  }
+</style>
+
+<h4 class="centered-title">Program warsztatów</h4>

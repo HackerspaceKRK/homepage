@@ -1,0 +1,7 @@
+<a class="site-brand-inner" rel="author" href="/">
+    {{ $image := resources.Get "images/hackerspace_logo.svg" }}
+    {{ $siteTitle := .Site.Title }}
+    {{ with $image }}
+        <img class="site-favicon" title="{{ $siteTitle }}"  src="{{ .RelPermalink }}" onerror="this.style.display='none'">
+    {{ end }}
+</a>

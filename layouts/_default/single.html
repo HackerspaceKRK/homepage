@@ -1,0 +1,14 @@
+{{ define "title" }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+{{ define "main" }}
+  
+  {{ partial "header.html" . }}
+  {{ partial "banner.html" . }}
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ .Content }}
+    </div>
+  </main>
+  {{ partial "footer.html" . }}
+{{ end }}

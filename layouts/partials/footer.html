@@ -1,0 +1,56 @@
+<footer class="site-footer h-card">
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div class="site-footer-columns">
+        <div>
+          <div>
+            <h3>Fundacja Hackerspace Kraków</h3>
+          </div>
+          <div>{{ .Site.Copyright }}</div>
+          <div>ul. Zacisze 5/P1, 31-156 Kraków</div>
+          <br />
+          <div>
+            Powered by
+            <a
+              title="Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
+              href="https://gohugo.io/"
+              >Hugo</a
+            >, theme based on
+            <a
+              title="Yat, yet
+            another theme."
+              href="https://github.com/jeffreytse/jekyll-theme-yat"
+              >Yat Theme</a
+            >.
+            <br />
+            <a href="https://github.com/HackerspaceKRK/homepage"
+              >View source on GitHub</a
+            >
+          </div>
+        </div>
+        <div>
+          <h3>Nasze profile w sieci</h3>
+          <div class="site-footer-socials">
+            <a href="https://github.com/HackerspaceKRK">
+              {{ $icon := resources.Get "images/socials/github.svg" }}
+              <img src="{{ $icon.RelPermalink }}" alt="GitHub logo" title="Github" />
+            </a>
+            <a href="https://social.hackerspace.pl/@hskrk">
+              {{ $icon := resources.Get "images/socials/mastodon.svg" }}
+              <img src="{{ $icon.RelPermalink }}" alt="Mastodon logo" title="Mastodon" />
+            </a>
+            <a href="https://www.facebook.com/HackerspaceKrakow">
+              {{ $icon := resources.Get "images/socials/facebook.svg" }}
+              <img src="{{ $icon.RelPermalink }}" alt="Facebook logo" title="Facebook" />
+            </a>
+            <a href="https://www.meetup.com/hackerspacekrakow/">
+              {{ $icon := resources.Get "images/socials/meetup.svg" }}
+              <img src="{{ $icon.RelPermalink }}" alt="Meetup logo" title="Meetup" />
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

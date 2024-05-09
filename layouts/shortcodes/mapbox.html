@@ -1,0 +1,27 @@
+<div id="map"></div>
+
+{{ $mapbox := resources.Get "external/mapbox-gl-v3.3.0.js" }}
+
+
+<script src='{{ $mapbox.RelPermalink }}'></script>
+
+<script>
+  mapboxgl.accessToken =
+    "pk.eyJ1Ijoid3ByenliIiwiYSI6IjRnckNtYncifQ.3q8gdJY61IsaClOZDa200w";
+  const map = new mapboxgl.Map({
+    container: "map", // container ID
+    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+    style: "mapbox://styles/mapbox/streets-v12", // style URL
+    center: [19.94336, 50.06603], // starting position [lng, lat]
+    zoom: 15, // starting zoom
+  });
+  const hs = new mapboxgl.Marker()
+    .setLngLat([19.94336, 50.06603])
+    .setPopup(
+      new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML(
+          `<a href="https://phabricator.hskrk.pl/w/about/siedziba"><strong>Hackerspace Kraków</strong></a>`
+        )
+    )
+    .addTo(map);
+</script>

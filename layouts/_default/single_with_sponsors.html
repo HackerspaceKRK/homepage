@@ -1,0 +1,21 @@
+{{ define "title" }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+{{ define "main" }}
+  
+  {{ partial "header.html" . }}
+  {{ partial "banner.html" . }}
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+        <div class="framework">
+            <section class="main">
+                {{ .Content }}
+            </section>
+            <section class="sidebar" style="margin-left: 15px;">
+                {{ partial "sponsors.html" . }}
+            </section>
+        </div>
+    </div>
+  </main>
+  {{ partial "footer.html" . }}
+{{ end }}
