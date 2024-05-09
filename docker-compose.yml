@@ -1,11 +1,12 @@
 version: "3"
 
 services:
-  jekyll:
-    build: .
-    command: jekyll serve --trace --host 0.0.0.0
+  hugo:
+    image: hugomods/hugo
+    command: hugo server --bind 0.0.0.0
     volumes:
       - .:/app
+    working_dir: /app
     ports:
-      - "4000:4000"
+      - "1313:1313"
     restart: "no"

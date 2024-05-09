@@ -1,0 +1,21 @@
+baseURL: 'https://hackerspace-krk.pl/'
+languageCode: 'pl-PL'
+title: 'Hackerspace Kraków'
+copyright: '2012-2024 Fundacja Hackerspace Kraków'
+menus:
+  main:
+  - name: wiki
+    url: https://phabricator.hskrk.pl/w/
+    weight: 10
+  - name: Kalendarz
+    url: https://www.meetup.com/hackerspacekrakow/
+    weight: 20
+  - name: Darowizny
+    pageRef: /darowizny
+    weight: 30
+  - name: Kontakt
+    pageRef: /kontakt
+    weight: 40
+  - name: Status siedziby
+    pageRef: /at
+    weight: 50

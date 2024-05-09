@@ -1,0 +1,31 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="me" href="https://social.hackerspace.pl/@hskrk">
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+
+
+{{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }} 
+{{ with resources.Get "scss/main.scss" | toCSS $opts | minify | fingerprint }}
+<link
+    rel="stylesheet"
+    href="{{ .RelPermalink }}"
+    integrity="{{ .Data.Integrity }}"
+    crossorigin="anonymous"
+/>
+{{ end }}
+
+
+{{ $favicon := resources.Get "images/favicon.png" }}
+<link rel="icon" href="{{ $favicon.RelPermalink }}" type="image/png" sizes="16x16" />
+
+{{ if .HasShortcode "mapbox" }}
+    {{ with resources.Get "external/mapbox-gl-v3.3.0.min.css" | fingerprint }}
+    <link
+        rel="stylesheet"
+        href="{{ .RelPermalink }}"
+        integrity="{{ .Data.Integrity }}"
+        crossorigin="anonymous"
+    />
+    {{ end }}
+{{end}}

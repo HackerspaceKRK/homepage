@@ -1,0 +1,10 @@
+<li>
+    <a href="{{ .href }}" target="_blank">
+      {{ $imgPath := .img }}
+      {{ $alt := .alt }}
+      {{ $image := resources.Get $imgPath }}
+      {{ with $image }}
+        <img class="sponsors" src="{{ .RelPermalink }}"  alt="{{ $alt }}">
+      {{ end }}
+    </a>
+  </li>
