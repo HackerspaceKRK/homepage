@@ -19,3 +19,7 @@ Alternatively you can just `docker-compose up` and visit `http://localhost:1313`
     - `layouts/partials/sponsors.html` - Sponsors
 - `assets/` - CSS, JS, images, etc.
 - `hugo.yaml` - Site configuration, main menu lives here
+
+## Tips
+
+Add the `img-popup-trigger` class to an image to make it open a popup with a larger version of the image when clicked.

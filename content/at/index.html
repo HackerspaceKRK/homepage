@@ -5,41 +5,84 @@ layout: single
 ---
 
 <div class="camera-container">
+  <div class="camera-col">
+    <div>
+      <h2>Hardroom</h2>
+      <img
+        class="img-popup-trigger"
+        src="https://static.apps.hskrk.pl/at-statics/hardroom.jpg"
+        alt="Widok na hardroom"
+      />
+    </div>
 
-    <div class="camera-col">
-      <div>
-        <h2>Hardroom</h2>
-        <img src="https://static.apps.hskrk.pl/at-statics/hardroom.jpg" alt="Widok na hardroom">
-      </div>
-  
-      <div>
-        <h2>Lab elektro</h2>
-        <img src="https://static.apps.hskrk.pl/at-statics/elelab.jpg" alt="Widok na lab elektroniczny">
-      </div>
-    </div>
-  
-    <div class="camer-col">
-      <div>
-        <h2>Korytarz</h2>
-        <img src="https://static.apps.hskrk.pl/at-statics/korytarz.jpg" alt="Widok na korytarz">
-      </div>
-  
-    </div>
-    <div class="camera-col">
-      <div>
-        <h2>Magazynek</h2>
-        <img src="https://static.apps.hskrk.pl/at-statics/netlab.jpg" alt="Widok na magazynek">
-      </div>
-      <div>
-        <h2>Softroom</h2>
-        <img src="https://static.apps.hskrk.pl/at-statics/softroom.jpg" alt="Widok na softroom">
-      </div>
-  
+    <div>
+      <h2>Lab elektro</h2>
+      <img
+        class="img-popup-trigger"
+        src="https://static.apps.hskrk.pl/at-statics/elelab.jpg"
+        alt="Widok na lab elektroniczny"
+      />
     </div>
   </div>
-  
-  <div class="charts">
-    <img src="https://static.apps.hskrk.pl/at-statics/charts/power-consumption.png" alt="">
-    <img src="https://static.apps.hskrk.pl/at-statics/charts/public-network-stats.png" alt="">
+
+  <div class="camer-col">
+    <div>
+      <h2>Korytarz</h2>
+      <img
+        class="img-popup-trigger"
+        src="https://static.apps.hskrk.pl/at-statics/korytarz.jpg"
+        alt="Widok na korytarz"
+      />
+    </div>
   </div>
-  
+  <div class="camera-col">
+    <div>
+      <h2>Magazynek</h2>
+      <img
+        class="img-popup-trigger"
+        src="https://static.apps.hskrk.pl/at-statics/netlab.jpg"
+        alt="Widok na magazynek"
+      />
+    </div>
+    <div>
+      <h2>Softroom</h2>
+      <img
+        class="img-popup-trigger"
+        src="https://static.apps.hskrk.pl/at-statics/softroom.jpg"
+        alt="Widok na softroom"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="charts">
+  <img
+    class="img-popup-trigger"
+    src="https://static.apps.hskrk.pl/at-statics/charts/power-consumption.png"
+    alt=""
+  />
+  <img
+    class="img-popup-trigger"
+    src="https://static.apps.hskrk.pl/at-statics/charts/public-network-stats.png"
+    alt=""
+  />
+</div>
+
+<script>
+  // Refresh the images every 5 minutes
+  function scheduleRefresh() {
+    const secondsLeft = 300 - ((Date.now() / 1000) % 300) + 60; // Add 60s to account for unsynced clocks
+    console.log(`Refreshing in ${secondsLeft} seconds`);
+    setTimeout(() => {
+      document.querySelectorAll(".img-popup-trigger").forEach((img) => {
+        if (!img.getAttribute("data-original-src")) {
+          img.setAttribute("data-original-src", img.src);
+        }
+        img.src =
+          img.getAttribute("data-original-src") + "?" + new Date().getTime();
+      });
+      scheduleRefresh();
+    }, secondsLeft * 1000);
+  }
+  scheduleRefresh();
+</script>
