@@ -17,6 +17,6 @@ menus:
     pageRef: /kontakt
     weight: 40
   - name: Status siedziby
-    pageRef: /at
+    url: https://at2.apps.hskrk.pl
     weight: 50
 enableRobotsTXT: true
