@@ -20,3 +20,7 @@ menus:
     url: https://at.hskrk.pl
     weight: 50
 enableRobotsTXT: true
+security:
+  allowContent:
+  - '^text/'
+  - '^application/'
