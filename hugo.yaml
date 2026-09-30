@@ -1,7 +1,7 @@
 baseURL: 'https://hackerspace-krk.pl/'
 languageCode: 'pl-PL'
 title: 'Hackerspace Kraków'
-copyright: '2012-2024 Fundacja Hackerspace Kraków'
+copyright: '2012-2026 Fundacja Hackerspace Kraków'
 menus:
   main:
   - name: wiki
